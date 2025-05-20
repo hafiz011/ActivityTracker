@@ -13,7 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="SaaS.Infrastructure\GeoIPService\" />
     <Folder Include="SaaS.Infrastructure\AlertNotifier\" />
     <Folder Include="SaaS.Tests\" />
     <Folder Include="SaaS.Shared\" />
