@@ -31,18 +31,18 @@ namespace ActivityTracker.SaaS.API.Controllers
             {
                 TenantId = auth,
                 UserId = dto.UserId,
-                UserNmae = dto.UserNmae,
-                IpAddress = location.IpAddress,
+                UserName = dto.UserName,
+                IpAddress = dto.IPAddress,
                 Country = location.Country,
                 City = location.City,
                 Region = location.Region,
                 Postal = location.Postal,
-                Latitude_Longitude = location.Latitude_Longitude,
-                Isp = location.Isp,
+                Latitude_Longitude = location.Loc,
+                Isp = location.Org,
                 TimeZone = location.TimeZone
             };
 
-            await _geoLocationService.InsartLocationAsync(geolocation);
+            await _geoLocationService.InsertLocationAsync(geolocation);
             await _activityService.LogActivityAsync(dto);
             return Ok();
         }

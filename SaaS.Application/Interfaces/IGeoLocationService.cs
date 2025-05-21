@@ -6,6 +6,6 @@ namespace ActivityTracker.SaaS.Application.Interfaces
     public interface IGeoLocationService
     {
         Task<GeoLocationDto> GetLocationAsync(string ipAddress);
-        Task InsartLocationAsync(GeoLocation geolocation);
+        Task InsertLocationAsync(GeoLocation geolocation);
     }
 }

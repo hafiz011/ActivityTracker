@@ -12,12 +12,13 @@ namespace ActivityTracker.SaaS.Infrastructure.Repositories
     {
         private readonly IMongoCollection<GeoLocation> _collection;
         private readonly GeolocationService _geolocationService;
-
+        private readonly IMongoCollection<LoginSession> _loginSessions;
 
         public GeoLocationService(MongoDbContext context, GeolocationService geolocationService)
         {
             _collection = context.LocationDB;
             _geolocationService = geolocationService;
+            _loginSessions = context.LoginSessionsDB;
         }
 
         public async Task<GeoLocationDto> GetLocationAsync(string ipAddress)
@@ -25,53 +26,76 @@ namespace ActivityTracker.SaaS.Infrastructure.Repositories
             return await _geolocationService.GetGeolocationAsync(ipAddress);
         }
 
-        public async Task InsartLocationAsync(GeoLocation geolocation)
+        public async Task InsertLocationAsync(GeoLocation geolocation)
         {
             var filter = Builders<GeoLocation>.Filter.And(
-               Builders<GeoLocation>.Filter.Eq(U => U.UserId, geolocation.UserId),
-               Builders<GeoLocation>.Filter.Eq(I => I.IpAddress, geolocation.IpAddress),
-               Builders<GeoLocation>.Filter.Eq(T => T.TenantId, geolocation.TenantId) 
-           );
-            var sort = Builders<GeoLocation>.Sort.Descending(g => g.CreatedAt);
-            var data = await _collection.Find(filter).Sort(sort).FirstOrDefaultAsync();
+                Builders<GeoLocation>.Filter.Eq(x => x.UserId, geolocation.UserId),
+                Builders<GeoLocation>.Filter.Eq(x => x.IpAddress, geolocation.IpAddress),
+                Builders<GeoLocation>.Filter.Eq(x => x.TenantId, geolocation.TenantId)
+            );
 
-            if (data == null)
+            var sort = Builders<GeoLocation>.Sort.Descending(x => x.CreatedAt);
+            var existingRecord = await _collection.Find(filter).Sort(sort).FirstOrDefaultAsync();
+
+            if (existingRecord == null)
             {
-                await _collection.InsertOneAsync(geolocation);
-                //await _collection.InsertOneAsync(geolocation);
-            }
+                var lastSessionFilter = Builders<GeoLocation>.Filter.And(
+                    Builders<GeoLocation>.Filter.Eq(x => x.UserId, geolocation.UserId),
+                    Builders<GeoLocation>.Filter.Eq(x => x.TenantId, geolocation.TenantId)
+                );
 
+                var lastKnownSession = await _collection.Find(lastSessionFilter).Sort(sort).FirstOrDefaultAsync();
+
+                if (lastKnownSession != null &&
+                    lastKnownSession.IpAddress != geolocation.IpAddress &&
+                    lastKnownSession.UserId == geolocation.UserId &&
+                    lastKnownSession.TenantId == geolocation.TenantId)
+                {
+                    var data = new LoginSession
+                    {
+                        TenantId = geolocation.TenantId,
+                        UserId = geolocation.UserId,
+                        UserNmae = geolocation.UserName,
+                        location = geolocation.Id.ToString(),
+                        
+                    };
+                    await _loginSessions.InsertOneAsync(data);
+                }
+                else
+                {
+                    await _collection.InsertOneAsync(geolocation);
+                }
+            }
             else
             {
-                // Update record if it exists
                 bool isMismatch =
-                    data.City != geolocation.City ||
-                    data.Region != geolocation.Region ||
-                    data.Country != geolocation.Country ||
-                    data.Latitude_Longitude != geolocation.Latitude_Longitude ||
-                    data.Isp != geolocation.Isp ||
-                    data.Postal != geolocation.Postal ||
-                    data.TimeZone != geolocation.TimeZone;
+                    existingRecord.City != geolocation.City ||
+                    existingRecord.Region != geolocation.Region ||
+                    existingRecord.Country != geolocation.Country ||
+                    existingRecord.Latitude_Longitude != geolocation.Latitude_Longitude ||
+                    existingRecord.Isp != geolocation.Isp ||
+                    existingRecord.Postal != geolocation.Postal ||
+                    existingRecord.TimeZone != geolocation.TimeZone;
 
                 if (isMismatch)
                 {
-                    // Update only if fields mismatch
-                    data.City = geolocation.City;
-                    data.Region = geolocation.Region;
-                    data.Country = geolocation.Country;
-                    data.Latitude_Longitude = geolocation.Latitude_Longitude;
-                    data.Isp = geolocation.Isp;
-                    data.Postal = geolocation.Postal;
-                    data.TimeZone = geolocation.TimeZone;
-                    await _collection.ReplaceOneAsync(data.Id.ToString(), data);
+                    existingRecord.City = geolocation.City;
+                    existingRecord.Region = geolocation.Region;
+                    existingRecord.Country = geolocation.Country;
+                    existingRecord.Latitude_Longitude = geolocation.Latitude_Longitude;
+                    existingRecord.Isp = geolocation.Isp;
+                    existingRecord.Postal = geolocation.Postal;
+                    existingRecord.TimeZone = geolocation.TimeZone;
 
+                    await _collection.ReplaceOneAsync(
+                        Builders<GeoLocation>.Filter.Eq(x => x.Id, existingRecord.Id),
+                        existingRecord
+                    );
                 }
             }
-
-
-            //var sort = Builders<GeoLocation>.Sort.Descending(g => g.CreatedAt);
-
-            //return await _userGeolocation.Find(filter).Sort(sort).FirstOrDefaultAsync();
         }
+
+
+
     }
 }

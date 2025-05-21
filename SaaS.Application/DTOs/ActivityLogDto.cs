@@ -3,7 +3,7 @@
     public class ActivityLogDto
     {
         public string UserId { get; set; }
-        public string UserNmae { get; set; }
+        public string UserName { get; set; }
         public string Action { get; set; }
         public string PageUrl { get; set; }
         public string IPAddress { get; set; }
