@@ -1,7 +1,9 @@
 ﻿using ActivityTracker.SaaS.Application.DTOs;
 using ActivityTracker.SaaS.Application.Interfaces;
+using ActivityTracker.SaaS.Domain.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
 
 namespace ActivityTracker.SaaS.API.Controllers
 {
@@ -10,15 +12,37 @@ namespace ActivityTracker.SaaS.API.Controllers
     public class ActivityController : ControllerBase
     {
         private readonly IActivityService _activityService;
+        private readonly IGeoLocationService _geoLocationService;
 
-        public ActivityController(IActivityService activityService)
+        public ActivityController(IActivityService activityService, IGeoLocationService geoLocationService)
         {
             _activityService = activityService;
+            _geoLocationService = geoLocationService;
         }
+
+
 
         [HttpPost("log")]
         public async Task<IActionResult> LogActivity([FromBody] ActivityLogDto dto)
         {
+            var location = await _geoLocationService.GetLocationAsync(dto.IPAddress);
+            var auth = "test";
+            var geolocation = new GeoLocation
+            {
+                TenantId = auth,
+                UserId = dto.UserId,
+                UserNmae = dto.UserNmae,
+                IpAddress = location.IpAddress,
+                Country = location.Country,
+                City = location.City,
+                Region = location.Region,
+                Postal = location.Postal,
+                Latitude_Longitude = location.Latitude_Longitude,
+                Isp = location.Isp,
+                TimeZone = location.TimeZone
+            };
+
+            await _geoLocationService.InsartLocationAsync(geolocation);
             await _activityService.LogActivityAsync(dto);
             return Ok();
         }

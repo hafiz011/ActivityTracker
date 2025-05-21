@@ -15,6 +15,7 @@ namespace ActivityTracker.SaaS.Infrastructure.MongoDb
         }
 
         public IMongoCollection<ActivityLog> ActivityDB => _database.GetCollection<ActivityLog>("ActivityDB");
+        public IMongoCollection<GeoLocation> LocationDB => _database.GetCollection<GeoLocation>("LocationDB");
 
 
     }

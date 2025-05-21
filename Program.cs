@@ -1,6 +1,15 @@
+using ActivityTracker.SaaS.Infrastructure.GeoIPService;
+using ActivityTracker.SaaS.Infrastructure.MongoDb;
+
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.Configure<MongoDbSettings>(builder.Configuration.GetSection("MongoDbSettings"));
+builder.Services.AddSingleton<MongoDbContext>();
+
+
 // Add services to the container.
+builder.Services.AddHttpClient<GeolocationService>();
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

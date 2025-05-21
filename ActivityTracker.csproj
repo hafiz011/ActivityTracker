@@ -8,12 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AspNetCore.Identity.MongoDbCore" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />
     <PackageReference Include="MongoDB.Driver" Version="3.4.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="SaaS.Infrastructure\AlertNotifier\" />
+    <Folder Include="SaaS.Infrastructure\Services\" />
     <Folder Include="SaaS.Tests\" />
     <Folder Include="SaaS.Shared\" />
   </ItemGroup>
