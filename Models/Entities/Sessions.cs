@@ -9,7 +9,7 @@ namespace ActivityTracker.Models.Entities
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
         public string Tenant_Id { get; set; }
-        public string UserId { get; set; } //user collection id
+        public string User_Id { get; set; } //user collection id
         public string Ip_Address { get; set; }
         public DeviceInfo Device { get; set; }
         public Location Geo_Location { get; set; }

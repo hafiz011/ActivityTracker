@@ -5,7 +5,7 @@ namespace ActivityTracker.Application.Interfaces
 {
     public interface IActivityService
     {
-        Task LogActivityAsync(ActivityLogDto dto);
+        Task LogActivityAsync(UserLoging dto);
         Task<IEnumerable<ActivityLog>> GetUserActivitiesAsync(string userId);
     }
 }

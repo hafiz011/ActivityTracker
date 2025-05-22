@@ -12,6 +12,6 @@ namespace ActivityTracker.Models.Entities
         public string User_Id { get; set; } 
         public string Email { get; set; }
         public string Last_login { get; set; }
-        public string Created_at { get; set; }
+        public DateTime Created_at { get; set; }
     }
 }

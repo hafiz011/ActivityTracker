@@ -53,10 +53,10 @@ namespace ActivityTracker.Infrastructure.Repositories
                 {
                     var data = new Sessions
                     {
-                        TenantId = geolocation.TenantId,
-                        UserId = geolocation.UserId,
-                        UserNmae = geolocation.UserName,
-                        location = geolocation.Id.ToString(),
+                        //TenantId = geolocation.TenantId,
+                        //UserId = geolocation.UserId,
+                        //UserNmae = geolocation.UserName,
+                        //location = geolocation.Id.ToString(),
                         
                     };
                     await _loginSessions.InsertOneAsync(data);

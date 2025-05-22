@@ -1,1 +1,12 @@
-{"Version":1,"Hash":"1ijNGCKqN+xX4NjfMC3zV2Du3uHlK66iaA2PTy7piOA=","Source":"ActivityTracker","BasePath":"_content/ActivityTracker","Mode":"Default","ManifestType":"Build","ReferencedProjectsConfiguration":[],"DiscoveryPatterns":[],"Assets":[],"Endpoints":[]}
+{
+  "Version": 1,
+  "Hash": "1ijNGCKqN+xX4NjfMC3zV2Du3uHlK66iaA2PTy7piOA=",
+  "Source": "ActivityTracker",
+  "BasePath": "_content/ActivityTracker",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

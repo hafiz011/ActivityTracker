@@ -16,16 +16,16 @@ namespace ActivityTracker.Infrastructure.Repositories
             _collection = context.ActivityDB;
         }
 
-        public async Task LogActivityAsync(ActivityLogDto dto)
+        public async Task LogActivityAsync(UserLoging dto)
         {
             var log = new ActivityLog
             {
-                UserId = dto.UserId,
-                Action = dto.Action,
-                PageUrl = dto.PageUrl,
-                //IPAddress = dto.IPAddress,
-                //Device = dto.UserAgent,
-                TimeUtc = DateTime.UtcNow,
+                //UserId = dto.UserId,
+                //Action = dto.Action,
+                //PageUrl = dto.PageUrl,
+                ////IPAddress = dto.IPAddress,
+                ////Device = dto.UserAgent,
+                //TimeUtc = DateTime.UtcNow,
                 LocalTime = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, TimeZoneInfo.Local)
             };
             await _collection.InsertOneAsync(log);
@@ -33,7 +33,7 @@ namespace ActivityTracker.Infrastructure.Repositories
 
         public async Task<IEnumerable<ActivityLog>> GetUserActivitiesAsync(string userId)
         {
-            return await _collection.Find(x => x.UserId == userId).ToListAsync();
+            return await _collection.Find(x => x.Session_Id == userId).ToListAsync();
         }
 
 

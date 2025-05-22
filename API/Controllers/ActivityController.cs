@@ -22,17 +22,18 @@ namespace ActivityTracker.API.Controllers
 
 
 
-        [HttpPost("log")]
-        public async Task<IActionResult> LogActivity([FromBody] ActivityLogDto dto)
+        [HttpPost("Userloging")]
+        public async Task<IActionResult> UserLog([FromBody] UserLoging dto)
         {
-            var location = await _geoLocationService.GetLocationAsync(dto.IPAddress);
+
+            var location = await _geoLocationService.GetLocationAsync(dto.IpAddress);
             var auth = "test";
             var geolocation = new GeoLocation
             {
                 TenantId = auth,
                 UserId = dto.UserId,
-                UserName = dto.UserName,
-                IpAddress = dto.IPAddress,
+                UserName = dto.Email,
+                IpAddress = dto.IpAddress,
                 Country = location.Country,
                 City = location.City,
                 Region = location.Region,
