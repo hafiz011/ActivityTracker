@@ -1,20 +1,7 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\GitHub\\ActivityTracker\\ActivityTracker\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{5267CF73-89D0-45AE-885E-D0652758D1A3}|ActivityTracker.csproj|d:\\github\\activitytracker\\activitytracker\\models\\entities\\reports .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5267CF73-89D0-45AE-885E-D0652758D1A3}|ActivityTracker.csproj|solutionrelative:models\\entities\\reports .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5267CF73-89D0-45AE-885E-D0652758D1A3}|ActivityTracker.csproj|d:\\github\\activitytracker\\activitytracker\\models\\entities\\alerts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5267CF73-89D0-45AE-885E-D0652758D1A3}|ActivityTracker.csproj|solutionrelative:models\\entities\\alerts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5267CF73-89D0-45AE-885E-D0652758D1A3}|ActivityTracker.csproj|d:\\github\\activitytracker\\activitytracker\\models\\entities\\geolocation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5267CF73-89D0-45AE-885E-D0652758D1A3}|ActivityTracker.csproj|solutionrelative:models\\entities\\geolocation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "WorkspaceRootPath": "D:\\Github\\ActivityTracker\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -22,46 +9,41 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": -1,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Reports .cs",
-              "DocumentMoniker": "D:\\GitHub\\ActivityTracker\\ActivityTracker\\Models\\Entities\\Reports .cs",
-              "RelativeDocumentMoniker": "Models\\Entities\\Reports .cs",
-              "ToolTip": "D:\\GitHub\\ActivityTracker\\ActivityTracker\\Models\\Entities\\Reports .cs",
-              "RelativeToolTip": "Models\\Entities\\Reports .cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T12:02:53.149Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Alerts.cs",
-              "DocumentMoniker": "D:\\GitHub\\ActivityTracker\\ActivityTracker\\Models\\Entities\\Alerts.cs",
-              "RelativeDocumentMoniker": "Models\\Entities\\Alerts.cs",
-              "ToolTip": "D:\\GitHub\\ActivityTracker\\ActivityTracker\\Models\\Entities\\Alerts.cs",
-              "RelativeToolTip": "Models\\Entities\\Alerts.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T11:57:05.545Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GeoLocation.cs",
-              "DocumentMoniker": "D:\\GitHub\\ActivityTracker\\ActivityTracker\\Models\\Entities\\GeoLocation.cs",
-              "RelativeDocumentMoniker": "Models\\Entities\\GeoLocation.cs",
-              "ToolTip": "D:\\GitHub\\ActivityTracker\\ActivityTracker\\Models\\Entities\\GeoLocation.cs",
-              "RelativeToolTip": "Models\\Entities\\GeoLocation.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAxwAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T11:52:58.999Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 1356,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
             }
           ]
         }

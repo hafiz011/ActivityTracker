@@ -47,3 +47,14 @@ D:\GitHub\ActivityTracker\ActivityTracker\obj\Debug\net8.0\staticwebassets.build
 D:\GitHub\ActivityTracker\ActivityTracker\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 D:\GitHub\ActivityTracker\ActivityTracker\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\GitHub\ActivityTracker\ActivityTracker\obj\Debug\net8.0\Activity.309B09C8.Up2Date
+D:\Github\ActivityTracker\obj\Debug\net8.0\ActivityTracker.csproj.AssemblyReference.cache
+D:\Github\ActivityTracker\obj\Debug\net8.0\ActivityTracker.GeneratedMSBuildEditorConfig.editorconfig
+D:\Github\ActivityTracker\obj\Debug\net8.0\ActivityTracker.AssemblyInfoInputs.cache
+D:\Github\ActivityTracker\obj\Debug\net8.0\ActivityTracker.AssemblyInfo.cs
+D:\Github\ActivityTracker\obj\Debug\net8.0\ActivityTracker.csproj.CoreCompileInputs.cache
+D:\Github\ActivityTracker\obj\Debug\net8.0\ActivityTracker.MvcApplicationPartsAssemblyInfo.cs
+D:\Github\ActivityTracker\obj\Debug\net8.0\ActivityTracker.MvcApplicationPartsAssemblyInfo.cache
+D:\Github\ActivityTracker\obj\Debug\net8.0\ActivityTracker.sourcelink.json
+D:\Github\ActivityTracker\obj\Debug\net8.0\ActivityTracker.dll
+D:\Github\ActivityTracker\obj\Debug\net8.0\refint\ActivityTracker.dll
+D:\Github\ActivityTracker\obj\Debug\net8.0\ActivityTracker.pdb

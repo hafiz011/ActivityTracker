@@ -1,25 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\GitHub\\ActivityTracker\\ActivityTracker\\",
+  "WorkspaceRootPath": "D:\\Github\\ActivityTracker\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5267CF73-89D0-45AE-885E-D0652758D1A3}|ActivityTracker.csproj|d:\\github\\activitytracker\\activitytracker\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5267CF73-89D0-45AE-885E-D0652758D1A3}|ActivityTracker.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5267CF73-89D0-45AE-885E-D0652758D1A3}|ActivityTracker.csproj|d:\\github\\activitytracker\\activitytracker\\infrastructure\\repositories\\activityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5267CF73-89D0-45AE-885E-D0652758D1A3}|ActivityTracker.csproj|solutionrelative:infrastructure\\repositories\\activityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5267CF73-89D0-45AE-885E-D0652758D1A3}|ActivityTracker.csproj|d:\\github\\activitytracker\\activitytracker\\infrastructure\\repositories\\geolocationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5267CF73-89D0-45AE-885E-D0652758D1A3}|ActivityTracker.csproj|d:\\github\\activitytracker\\infrastructure\\repositories\\geolocationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5267CF73-89D0-45AE-885E-D0652758D1A3}|ActivityTracker.csproj|solutionrelative:infrastructure\\repositories\\geolocationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5267CF73-89D0-45AE-885E-D0652758D1A3}|ActivityTracker.csproj|d:\\github\\activitytracker\\activitytracker\\infrastructure\\mongodb\\mongodbsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5267CF73-89D0-45AE-885E-D0652758D1A3}|ActivityTracker.csproj|solutionrelative:infrastructure\\mongodb\\mongodbsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5267CF73-89D0-45AE-885E-D0652758D1A3}|ActivityTracker.csproj|d:\\github\\activitytracker\\activitytracker\\infrastructure\\mongodb\\mongodbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5267CF73-89D0-45AE-885E-D0652758D1A3}|ActivityTracker.csproj|d:\\github\\activitytracker\\infrastructure\\mongodb\\mongodbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5267CF73-89D0-45AE-885E-D0652758D1A3}|ActivityTracker.csproj|solutionrelative:infrastructure\\mongodb\\mongodbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -30,72 +18,67 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 1356,
           "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\GitHub\\ActivityTracker\\ActivityTracker\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\GitHub\\ActivityTracker\\ActivityTracker\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T11:00:50.458Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "GeoLocationService.cs",
-              "DocumentMoniker": "D:\\GitHub\\ActivityTracker\\ActivityTracker\\Infrastructure\\Repositories\\GeoLocationService.cs",
+              "DocumentMoniker": "D:\\Github\\ActivityTracker\\Infrastructure\\Repositories\\GeoLocationService.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Repositories\\GeoLocationService.cs",
-              "ToolTip": "D:\\GitHub\\ActivityTracker\\ActivityTracker\\Infrastructure\\Repositories\\GeoLocationService.cs",
+              "ToolTip": "D:\\Github\\ActivityTracker\\Infrastructure\\Repositories\\GeoLocationService.cs",
               "RelativeToolTip": "Infrastructure\\Repositories\\GeoLocationService.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwAEAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAACgAAAAAAAAAAAAwwDoAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T11:00:20.29Z",
+              "WhenOpened": "2025-05-22T15:54:45.245Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ActivityService.cs",
-              "DocumentMoniker": "D:\\GitHub\\ActivityTracker\\ActivityTracker\\Infrastructure\\Repositories\\ActivityService.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\ActivityService.cs",
-              "ToolTip": "D:\\GitHub\\ActivityTracker\\ActivityTracker\\Infrastructure\\Repositories\\ActivityService.cs",
-              "RelativeToolTip": "Infrastructure\\Repositories\\ActivityService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T11:00:11.392Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MongoDbSettings.cs",
-              "DocumentMoniker": "D:\\GitHub\\ActivityTracker\\ActivityTracker\\Infrastructure\\MongoDb\\MongoDbSettings.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\MongoDb\\MongoDbSettings.cs",
-              "ToolTip": "D:\\GitHub\\ActivityTracker\\ActivityTracker\\Infrastructure\\MongoDb\\MongoDbSettings.cs",
-              "RelativeToolTip": "Infrastructure\\MongoDb\\MongoDbSettings.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T11:00:08.52Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "MongoDbContext.cs",
-              "DocumentMoniker": "D:\\GitHub\\ActivityTracker\\ActivityTracker\\Infrastructure\\MongoDb\\MongoDbContext.cs",
+              "DocumentMoniker": "D:\\Github\\ActivityTracker\\Infrastructure\\MongoDb\\MongoDbContext.cs",
               "RelativeDocumentMoniker": "Infrastructure\\MongoDb\\MongoDbContext.cs",
-              "ToolTip": "D:\\GitHub\\ActivityTracker\\ActivityTracker\\Infrastructure\\MongoDb\\MongoDbContext.cs",
+              "ToolTip": "D:\\Github\\ActivityTracker\\Infrastructure\\MongoDb\\MongoDbContext.cs",
               "RelativeToolTip": "Infrastructure\\MongoDb\\MongoDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAwwBIAAABdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-22T11:00:05.633Z",
+              "WhenOpened": "2025-05-22T15:54:26.554Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
             }
           ]
         }

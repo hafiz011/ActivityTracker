@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="AspNetCore.Identity.MongoDbCore" Version="6.0.0" />
+    <PackageReference Include="MailKit" Version="4.12.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />
     <PackageReference Include="MongoDB.Driver" Version="3.4.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
@@ -17,7 +18,6 @@
 
   <ItemGroup>
     <Folder Include="Infrastructure\AlertNotifier\" />
-    <Folder Include="Infrastructure\Services\" />
     <Folder Include="SaaS.Tests\" />
     <Folder Include="SaaS.Shared\" />
   </ItemGroup>

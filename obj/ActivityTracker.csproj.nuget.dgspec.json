@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GitHub\\ActivityTracker\\ActivityTracker\\ActivityTracker.csproj": {}
+    "D:\\Github\\ActivityTracker\\ActivityTracker.csproj": {}
   },
   "projects": {
-    "D:\\GitHub\\ActivityTracker\\ActivityTracker\\ActivityTracker.csproj": {
+    "D:\\Github\\ActivityTracker\\ActivityTracker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\ActivityTracker\\ActivityTracker\\ActivityTracker.csproj",
+        "projectUniqueName": "D:\\Github\\ActivityTracker\\ActivityTracker.csproj",
         "projectName": "ActivityTracker",
-        "projectPath": "D:\\GitHub\\ActivityTracker\\ActivityTracker\\ActivityTracker.csproj",
-        "packagesPath": "C:\\Users\\Hafiz\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\ActivityTracker\\ActivityTracker\\obj\\",
+        "projectPath": "D:\\Github\\ActivityTracker\\ActivityTracker.csproj",
+        "packagesPath": "C:\\Users\\walton\\.nuget\\packages\\",
+        "outputPath": "D:\\Github\\ActivityTracker\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Hafiz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\walton\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,7 +44,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -53,6 +53,10 @@
             "AspNetCore.Identity.MongoDbCore": {
               "target": "Package",
               "version": "[6.0.0, )"
+            },
+            "MailKit": {
+              "target": "Package",
+              "version": "[4.12.1, )"
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
@@ -90,7 +94,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
