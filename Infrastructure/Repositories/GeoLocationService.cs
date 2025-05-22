@@ -12,7 +12,7 @@ namespace ActivityTracker.Infrastructure.Repositories
     {
         private readonly IMongoCollection<GeoLocation> _collection;
         private readonly GeolocationService _geolocationService;
-        private readonly IMongoCollection<LoginSession> _loginSessions;
+        private readonly IMongoCollection<Session> _loginSessions;
 
         public GeoLocationService(MongoDbContext context, GeolocationService geolocationService)
         {
@@ -51,7 +51,7 @@ namespace ActivityTracker.Infrastructure.Repositories
                     lastKnownSession.UserId == geolocation.UserId &&
                     lastKnownSession.TenantId == geolocation.TenantId)
                 {
-                    var data = new LoginSession
+                    var data = new Session
                     {
                         TenantId = geolocation.TenantId,
                         UserId = geolocation.UserId,

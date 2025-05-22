@@ -8,12 +8,10 @@ namespace ActivityTracker.Models.Entities
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
-        public string UserId { get; set; }
-        public string TenantId { get; set; }
-        public string Action { get; set; }
-        public string PageUrl { get; set; }
-
-        public DateTime TimeUtc { get; set; }
+        public string Session_Id { get; set; }
+        public string Type { get; set; }
+        public string Page_Url { get; set; }
+        public DateTime Time_Stamp { get; set; }
         public DateTime LocalTime { get; set; }
     }
 }
