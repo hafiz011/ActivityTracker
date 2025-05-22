@@ -16,8 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="SaaS.Infrastructure\AlertNotifier\" />
-    <Folder Include="SaaS.Infrastructure\Services\" />
+    <Folder Include="Infrastructure\AlertNotifier\" />
+    <Folder Include="Infrastructure\Services\" />
     <Folder Include="SaaS.Tests\" />
     <Folder Include="SaaS.Shared\" />
   </ItemGroup>

@@ -1,7 +1,7 @@
-using ActivityTracker.SaaS.Application.Interfaces;
-using ActivityTracker.SaaS.Infrastructure.GeoIPService;
-using ActivityTracker.SaaS.Infrastructure.MongoDb;
-using ActivityTracker.SaaS.Infrastructure.Repositories;
+using ActivityTracker.Application.Interfaces;
+using ActivityTracker.Infrastructure.GeoIPService;
+using ActivityTracker.Infrastructure.MongoDb;
+using ActivityTracker.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 

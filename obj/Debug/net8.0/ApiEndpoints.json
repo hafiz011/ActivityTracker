@@ -1,0 +1,34 @@
+[
+  {
+    "ContainingType": "ActivityTracker.API.Controllers.ActivityController",
+    "Method": "LogActivity",
+    "RelativePath": "api/Activity/log",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ActivityTracker.Application.DTOs.ActivityLogDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ActivityTracker.API.Controllers.ActivityController",
+    "Method": "GetUserActivities",
+    "RelativePath": "api/Activity/user/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
