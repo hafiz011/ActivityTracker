@@ -8,6 +8,7 @@ namespace ActivityTracker.Models.Entities
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
+        public string UserId { get; set; }
         public string Org_Name { get; set; }
         public string Domain { get; set; }
         public string ApiSecret { get; set; }

@@ -106,3 +106,10 @@ D:\Github\ActivityTracker\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\Github\ActivityTracker\obj\Debug\net8.0\Activity.309B09C8.Up2Date
 D:\Github\ActivityTracker\obj\Debug\net8.0\ActivityTracker.genruntimeconfig.cache
 D:\Github\ActivityTracker\obj\Debug\net8.0\ref\ActivityTracker.dll
+D:\Github\ActivityTracker\bin\Debug\net8.0\AWSSDK.Core.dll
+D:\Github\ActivityTracker\bin\Debug\net8.0\AWSSDK.SecurityToken.dll
+D:\Github\ActivityTracker\bin\Debug\net8.0\MongoDB.Driver.Core.dll
+D:\Github\ActivityTracker\bin\Debug\net8.0\MongoDB.Libmongocrypt.dll
+D:\Github\ActivityTracker\bin\Debug\net8.0\runtimes\linux\native\libmongocrypt.so
+D:\Github\ActivityTracker\bin\Debug\net8.0\runtimes\osx\native\libmongocrypt.dylib
+D:\Github\ActivityTracker\bin\Debug\net8.0\runtimes\win\native\mongocrypt.dll
