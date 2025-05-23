@@ -9,10 +9,10 @@ namespace ActivityTracker.Application.Interfaces
     {
         Task<Tenants> CreateApiKeyAsync(ApiKeyDto apiKeyDto);
         Task<Tenants> GetApiByUserIdAsync(string userId);
-        Task<Tenants> GetAllApiKey(string apiSecret);
+        Task<IEnumerable<Tenants>> GetAllApiKey(string apiSecret);
         Task<bool> RenewApiKeyAsync(string key);
         Task<bool> RevokeApiKeyAsync(string key);
         Task<bool> TrackUsageAsync(string key);
-        Task<bool> ValidateApiKeyAsync(string key);
+        Task<Tenants> ValidateApiKeyAsync(string key);
     }
 }

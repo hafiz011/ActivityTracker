@@ -3,24 +3,16 @@
   "WorkspaceRootPath": "D:\\Github\\ActivityTracker\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5267CF73-89D0-45AE-885E-D0652758D1A3}|ActivityTracker.csproj|d:\\github\\activitytracker\\infrastructure\\repositories\\apikeyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5267CF73-89D0-45AE-885E-D0652758D1A3}|ActivityTracker.csproj|solutionrelative:infrastructure\\repositories\\apikeyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5267CF73-89D0-45AE-885E-D0652758D1A3}|ActivityTracker.csproj|d:\\github\\activitytracker\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5267CF73-89D0-45AE-885E-D0652758D1A3}|ActivityTracker.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5267CF73-89D0-45AE-885E-D0652758D1A3}|ActivityTracker.csproj|d:\\github\\activitytracker\\models\\entities\\tenants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5267CF73-89D0-45AE-885E-D0652758D1A3}|ActivityTracker.csproj|solutionrelative:models\\entities\\tenants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5267CF73-89D0-45AE-885E-D0652758D1A3}|ActivityTracker.csproj|d:\\github\\activitytracker\\api\\controllers\\apikeycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5267CF73-89D0-45AE-885E-D0652758D1A3}|ActivityTracker.csproj|solutionrelative:api\\controllers\\apikeycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5267CF73-89D0-45AE-885E-D0652758D1A3}|ActivityTracker.csproj|d:\\github\\activitytracker\\application\\interfaces\\iapikeyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5267CF73-89D0-45AE-885E-D0652758D1A3}|ActivityTracker.csproj|solutionrelative:application\\interfaces\\iapikeyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5267CF73-89D0-45AE-885E-D0652758D1A3}|ActivityTracker.csproj|d:\\github\\activitytracker\\infrastructure\\repositories\\apikeyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5267CF73-89D0-45AE-885E-D0652758D1A3}|ActivityTracker.csproj|solutionrelative:infrastructure\\repositories\\apikeyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,65 +50,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Github\\ActivityTracker\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\Github\\ActivityTracker\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAAEUAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T06:41:01.311Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Tenants.cs",
-              "DocumentMoniker": "D:\\Github\\ActivityTracker\\Models\\Entities\\Tenants.cs",
-              "RelativeDocumentMoniker": "Models\\Entities\\Tenants.cs",
-              "ToolTip": "D:\\Github\\ActivityTracker\\Models\\Entities\\Tenants.cs",
-              "RelativeToolTip": "Models\\Entities\\Tenants.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T06:19:46.908Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "ApiKeyRepository.cs",
               "DocumentMoniker": "D:\\Github\\ActivityTracker\\Infrastructure\\Repositories\\ApiKeyRepository.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Repositories\\ApiKeyRepository.cs",
               "ToolTip": "D:\\Github\\ActivityTracker\\Infrastructure\\Repositories\\ApiKeyRepository.cs",
               "RelativeToolTip": "Infrastructure\\Repositories\\ApiKeyRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA/AAAAAAAAAA==",
+              "ViewState": "AgIAACwAAAAAAAAAAAAIwEYAAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-23T06:06:12.992Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "IApiKeyRepository.cs",
               "DocumentMoniker": "D:\\Github\\ActivityTracker\\Application\\Interfaces\\IApiKeyRepository.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\IApiKeyRepository.cs",
               "ToolTip": "D:\\Github\\ActivityTracker\\Application\\Interfaces\\IApiKeyRepository.cs",
               "RelativeToolTip": "Application\\Interfaces\\IApiKeyRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-22T18:32:03.567Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "ApiKeyController.cs",
               "DocumentMoniker": "D:\\Github\\ActivityTracker\\API\\Controllers\\ApiKeyController.cs",
               "RelativeDocumentMoniker": "API\\Controllers\\ApiKeyController.cs",
               "ToolTip": "D:\\Github\\ActivityTracker\\API\\Controllers\\ApiKeyController.cs",
               "RelativeToolTip": "API\\Controllers\\ApiKeyController.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAmwDIAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAkwFgAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-22T18:22:14.368Z",
               "EditorCaption": ""

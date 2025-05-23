@@ -36,10 +36,12 @@ namespace ActivityTracker.API.Controllers
             return Ok(new
             {
                 apiKey.ApiSecret,
-                apiKey.Created_At,
                 apiKey.Domain,
                 apiKey.Org_Name,
-                apiKey.Plan
+                apiKey.Plan,
+                apiKey.ExpirationDate,
+                apiKey.RequestLimit,
+                apiKey.Created_At
             });
         }
 
@@ -74,7 +76,10 @@ namespace ActivityTracker.API.Controllers
                 {
                     apiKey.ApiSecret,
                     apiKey.Domain,
+                    apiKey.Org_Name,
                     apiKey.Plan,
+                    apiKey.ExpirationDate,
+                    apiKey.RequestLimit,
                     apiKey.Created_At
                 }
             });

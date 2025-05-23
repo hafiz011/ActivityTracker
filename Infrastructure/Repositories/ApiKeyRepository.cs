@@ -12,7 +12,6 @@ namespace ActivityTracker.Infrastructure.Repositories
         public ApiKeyRepository(MongoDbContext context )
         {
             _collection = context.ApiKey;
-
         }
         public async Task<Tenants> CreateApiKeyAsync(ApiKeyController.ApiKeyDto apiKeyDto)
         {
@@ -33,34 +32,50 @@ namespace ActivityTracker.Infrastructure.Repositories
             return apiKey;
         }
 
-        public Task<Tenants> GetAllApiKey(string apiSecret)
+        public async Task<IEnumerable<Tenants>> GetAllApiKey(string apiSecret)
         {
-            throw new NotImplementedException();
+            var sort = Builders<Tenants>.Sort.Ascending(x => x.Created_At);
+            return await _collection.Find(_ => true).Sort(sort).ToListAsync();
         }
 
-        public Task<Tenants> GetApiByUserIdAsync(string userId)
+        public async Task<Tenants> GetApiByUserIdAsync(string userId)
         {
-            throw new NotImplementedException();
+            return await _collection.Find(a => a.UserId == userId).FirstOrDefaultAsync();
         }
 
-        public Task<bool> RenewApiKeyAsync(string key)
+        public async Task<bool> RenewApiKeyAsync(string key)
         {
-            throw new NotImplementedException();
+            var update = Builders<Tenants>.Update.Set(a => a.ExpirationDate, DateTime.UtcNow.AddMonths(1));
+            var result = await _collection.UpdateOneAsync(a => a.ApiSecret == key && !a.IsRevoked, update);
+
+            return result.ModifiedCount > 0;
         }
 
-        public Task<bool> RevokeApiKeyAsync(string key)
+        public async Task<bool> RevokeApiKeyAsync(string key)
         {
-            throw new NotImplementedException();
+            var update = Builders<Tenants>.Update.Set(a => a.IsRevoked, true);
+            var result = await _collection.UpdateOneAsync(a => a.ApiSecret == key, update);
+
+            return result.ModifiedCount > 0;
         }
 
-        public Task<bool> TrackUsageAsync(string key)
+        public async Task<bool> TrackUsageAsync(string key)
         {
-            throw new NotImplementedException();
+            var apiKey = await _collection.Find(a => a.ApiSecret == key).FirstOrDefaultAsync();
+            if (apiKey == null || apiKey.IsRevoked || apiKey.RequestLimit <= 0)
+            {
+                return false;
+            }
+
+            var update = Builders<Tenants>.Update.Inc(a => a.RequestLimit, -1);
+            var result = await _collection.UpdateOneAsync(a => a.ApiSecret == key && !a.IsRevoked, update);
+
+            return result.ModifiedCount > 0;
         }
 
-        public Task<bool> ValidateApiKeyAsync(string key)
+        public async Task<Tenants> ValidateApiKeyAsync(string key)
         {
-            throw new NotImplementedException();
+            return await _collection.Find(a => a.ApiSecret == key && a.ExpirationDate > DateTime.UtcNow && !a.IsRevoked).FirstOrDefaultAsync();
         }
     }
 }
