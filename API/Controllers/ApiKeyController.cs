@@ -29,11 +29,7 @@ namespace ActivityTracker.API.Controllers
             if (string.IsNullOrEmpty(userId))
                 return Unauthorized(new { Message = "User not authenticated." });
 
-            var user = await _userManager.FindByIdAsync(userId);
-            if (user == null)
-                return NotFound(new { Message = "User not found." });
-
-            var apiKey = await _apiKeyRepository.GetApiByUserIdAsync(user.Id.ToString());
+            var apiKey = await _apiKeyRepository.GetApiByUserIdAsync(userId);
             if (apiKey == null)
                 return NotFound(new { Message = "No API key associated with this user." });
 

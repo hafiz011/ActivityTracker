@@ -12,7 +12,11 @@ namespace ActivityTracker.Models.Entities
         public string Org_Name { get; set; }
         public string Domain { get; set; }
         public string ApiSecret { get; set; }
+        public string Plan { get; set; }
+        public DateTime ExpirationDate { get; set; }
+        public int RequestLimit { get; set; }
+        public bool IsRevoked { get; set; }
         public DateTime Created_At { get; set; }
-        public string Plan {  get; set; }
     }
+
 }

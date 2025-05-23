@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Application\BusinessLogic\" />
     <Folder Include="Infrastructure\AlertNotifier\" />
     <Folder Include="SaaS.Tests\" />
     <Folder Include="SaaS.Shared\" />

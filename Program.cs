@@ -69,6 +69,7 @@ builder.Services.AddCors(options =>
 
 // Add services to the container.
 builder.Services.AddHttpClient<GeolocationService>();
+builder.Services.AddScoped<IApiKeyRepository, ApiKeyRepository>();
 builder.Services.AddScoped<IActivityService, ActivityService>();
 builder.Services.AddScoped<IGeoLocationService, GeoLocationService>();
 
