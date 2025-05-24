@@ -240,7 +240,7 @@
         }
       }
     },
-    "/api/ApiKey/GetApiKey": {
+    "/api/ApiKey/GetApiInfo": {
       "get": {
         "tags": [
           "ApiKey"
@@ -276,6 +276,18 @@
             }
           }
         },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ApiKey/regenerate": {
+      "post": {
+        "tags": [
+          "ApiKey"
+        ],
         "responses": {
           "200": {
             "description": "Success"

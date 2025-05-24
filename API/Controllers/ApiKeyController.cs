@@ -1,4 +1,5 @@
 ﻿using ActivityTracker.Application.Interfaces;
+using ActivityTracker.Infrastructure.Services;
 using ActivityTracker.Models;
 using ActivityTracker.Models.Entities;
 using Microsoft.AspNetCore.Authorization;
@@ -24,7 +25,7 @@ namespace ActivityTracker.API.Controllers
         }
 
         // GET: api/ApiKey
-        [HttpGet("GetApiKey")]
+        [HttpGet("GetApiInfo")]
         public async Task<IActionResult> GetApiKey()
         {
             var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
@@ -37,7 +38,6 @@ namespace ActivityTracker.API.Controllers
 
             return Ok(new
             {
-                apiKey.ApiSecret,
                 apiKey.Domain,
                 apiKey.Org_Name,
                 apiKey.Plan,
@@ -66,10 +66,11 @@ namespace ActivityTracker.API.Controllers
             if (existingKey != null)
                 return BadRequest(new { Message = "An API key already exists for your account." });
 
+            var (rawKey, hashedKey) = ApiKeyGenerator.GenerateApiKey();
             var key = new Tenants
             {
                 UserId = userId,
-                ApiSecret = Guid.NewGuid().ToString("N"),
+                ApiSecret = hashedKey,
                 Org_Name = apiKeyDto.Org_Name,
                 Domain = apiKeyDto.Domain,
                 Plan = apiKeyDto.Plan,
@@ -82,19 +83,57 @@ namespace ActivityTracker.API.Controllers
             var apiKey = await _apiKeyRepository.CreateApiKeyAsync(key);
             return Ok(new
             {
-                Message = "API key created successfully.",
-                ApiKey = new
-                {
-                    apiKey.ApiSecret,
-                    apiKey.Domain,
-                    apiKey.Org_Name,
-                    apiKey.Plan,
-                    apiKey.ExpirationDate,
-                    apiKey.RequestLimit,
-                    apiKey.Created_At
-                }
+                Message = "API key created successfully. Please save it now.",
+                ApiKey = rawKey
             });
         }
+
+        [HttpPost("regenerate")]
+        public async Task<IActionResult> RegenerateApiKey()
+        {
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (string.IsNullOrEmpty(userId))
+                return Unauthorized(new { Message = "User not authenticated." });
+
+            var existingKey = await _apiKeyRepository.GetApiByUserIdAsync(userId);
+            if (existingKey == null)
+                return NotFound(new { Message = "No existing API key found to regenerate." });
+
+            // Revoke old key
+            await _apiKeyRepository.RevokeApiKeyAsync(existingKey.ApiSecret);
+
+            // Generate new key
+            var (rawKey, hashedKey) = ApiKeyGenerator.GenerateApiKey();
+
+            // Save new key
+            var newKey = new Tenants
+            {
+                UserId = userId,
+                ApiSecret = hashedKey,
+                Org_Name = existingKey.Org_Name,
+                Domain = existingKey.Domain,
+                Plan = existingKey.Plan,
+                Created_At = DateTime.UtcNow,
+                ExpirationDate = DateTime.UtcNow.AddDays(30),
+                RequestLimit = 1000,
+                IsRevoked = false
+            };
+
+            await _apiKeyRepository.CreateApiKeyAsync(newKey);
+
+            return Ok(new
+            {
+                Message = "API key regenerated successfully. Please store this key securely.",
+                RawApiKey = rawKey,
+                newKey.Domain,
+                newKey.Org_Name,
+                newKey.Plan,
+                newKey.ExpirationDate,
+                newKey.RequestLimit,
+                newKey.Created_At
+            });
+        }
+
 
         public class Renew()
         {

@@ -171,7 +171,7 @@
   {
     "ContainingType": "ActivityTracker.API.Controllers.ApiKeyController",
     "Method": "GetApiKey",
-    "RelativePath": "api/ApiKey/GetApiKey",
+    "RelativePath": "api/ApiKey/GetApiInfo",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -192,6 +192,16 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ActivityTracker.API.Controllers.ApiKeyController",
+    "Method": "RegenerateApiKey",
+    "RelativePath": "api/ApiKey/regenerate",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {

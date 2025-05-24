@@ -1,6 +1,7 @@
 ﻿using ActivityTracker.API.Controllers;
 using ActivityTracker.Application.Interfaces;
 using ActivityTracker.Infrastructure.MongoDb;
+using ActivityTracker.Infrastructure.Services;
 using ActivityTracker.Models.Entities;
 using MongoDB.Driver;
 
@@ -62,9 +63,13 @@ namespace ActivityTracker.Infrastructure.Repositories
             return result.ModifiedCount > 0;
         }
 
-        public async Task<Tenants> ValidateApiKeyAsync(string key)
+        public async Task<Tenants> ValidateApiKeyAsync(string rawKey)
         {
-            return await _collection.Find(a => a.ApiSecret == key && a.ExpirationDate > DateTime.UtcNow && !a.IsRevoked).FirstOrDefaultAsync();
+            var hashedKey = ApiKeyGenerator.HashApiKey(rawKey);
+            return await _collection.Find(a =>
+                a.ApiSecret == hashedKey &&
+                a.ExpirationDate > DateTime.UtcNow &&
+                !a.IsRevoked).FirstOrDefaultAsync();
         }
     }
 }
