@@ -21,6 +21,7 @@
     <Folder Include="Infrastructure\AlertNotifier\" />
     <Folder Include="SaaS.Tests\" />
     <Folder Include="SaaS.Shared\" />
+    <Folder Include="wwwroot\images\profile\" />
   </ItemGroup>
 
 </Project>
