@@ -171,7 +171,7 @@
   {
     "ContainingType": "ActivityTracker.API.Controllers.ApiKeyController",
     "Method": "GetApiKey",
-    "RelativePath": "api/ApiKey",
+    "RelativePath": "api/ApiKey/GetApiKey",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -181,7 +181,7 @@
   {
     "ContainingType": "ActivityTracker.API.Controllers.ApiKeyController",
     "Method": "CreateApiKey",
-    "RelativePath": "api/ApiKey/Create",
+    "RelativePath": "api/ApiKey/create",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -197,14 +197,14 @@
   {
     "ContainingType": "ActivityTracker.API.Controllers.ApiKeyController",
     "Method": "RenewApiKey",
-    "RelativePath": "api/ApiKey/Renew",
+    "RelativePath": "api/ApiKey/renew",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "key",
-        "Type": "System.String",
+        "Name": "renew",
+        "Type": "ActivityTracker.API.Controllers.ApiKeyController\u002BRenew",
         "IsRequired": true
       }
     ],
@@ -213,7 +213,7 @@
   {
     "ContainingType": "ActivityTracker.API.Controllers.ApiKeyController",
     "Method": "RevokeApiKey",
-    "RelativePath": "api/ApiKey/Revoke",
+    "RelativePath": "api/ApiKey/revoke",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -221,39 +221,7 @@
       {
         "Name": "key",
         "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "ActivityTracker.API.Controllers.ApiKeyController",
-    "Method": "TrackUsage",
-    "RelativePath": "api/ApiKey/TrackUsage",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "key",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "ActivityTracker.API.Controllers.ApiKeyController",
-    "Method": "ValidateApiKey",
-    "RelativePath": "api/ApiKey/Validate",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "key",
-        "Type": "System.String",
-        "IsRequired": true
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

@@ -7,7 +7,7 @@ namespace ActivityTracker.Application.Interfaces
 {
     public interface IApiKeyRepository
     {
-        Task<Tenants> CreateApiKeyAsync(ApiKeyDto apiKeyDto);
+        Task<Tenants> CreateApiKeyAsync(Tenants key);
         Task<Tenants> GetApiByUserIdAsync(string userId);
         Task<IEnumerable<Tenants>> GetAllApiKey(string apiSecret);
         Task<bool> RenewApiKeyAsync(string key);

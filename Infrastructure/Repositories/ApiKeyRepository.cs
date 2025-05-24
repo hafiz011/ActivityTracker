@@ -13,21 +13,8 @@ namespace ActivityTracker.Infrastructure.Repositories
         {
             _collection = context.ApiKey;
         }
-        public async Task<Tenants> CreateApiKeyAsync(ApiKeyController.ApiKeyDto apiKeyDto)
+        public async Task<Tenants> CreateApiKeyAsync(Tenants apiKey)
         {
-            var apiKey = new Tenants
-            {
-                ApiSecret = Guid.NewGuid().ToString("N"),
-                UserId = apiKeyDto.UserId,
-                Org_Name = apiKeyDto.Org_Name,
-                Domain = apiKeyDto.Domain,
-                Plan = apiKeyDto.Plan,
-                Created_At = DateTime.UtcNow,
-                ExpirationDate = DateTime.UtcNow.AddDays(30),
-                RequestLimit = 1000,
-                IsRevoked = false
-            };
-
             await _collection.InsertOneAsync(apiKey);
             return apiKey;
         }
@@ -45,11 +32,13 @@ namespace ActivityTracker.Infrastructure.Repositories
 
         public async Task<bool> RenewApiKeyAsync(string key)
         {
-            var update = Builders<Tenants>.Update.Set(a => a.ExpirationDate, DateTime.UtcNow.AddMonths(1));
+            var newExpirationDate = DateTime.UtcNow.AddMonths(1); // compute date here
+            var update = Builders<Tenants>.Update.Set(a => a.ExpirationDate, newExpirationDate);
             var result = await _collection.UpdateOneAsync(a => a.ApiSecret == key && !a.IsRevoked, update);
 
             return result.ModifiedCount > 0;
         }
+
 
         public async Task<bool> RevokeApiKeyAsync(string key)
         {

@@ -240,7 +240,7 @@
         }
       }
     },
-    "/api/ApiKey": {
+    "/api/ApiKey/GetApiKey": {
       "get": {
         "tags": [
           "ApiKey"
@@ -252,7 +252,7 @@
         }
       }
     },
-    "/api/ApiKey/Create": {
+    "/api/ApiKey/create": {
       "post": {
         "tags": [
           "ApiKey"
@@ -283,7 +283,7 @@
         }
       }
     },
-    "/api/ApiKey/Validate": {
+    "/api/ApiKey/renew": {
       "post": {
         "tags": [
           "ApiKey"
@@ -292,17 +292,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "string"
+                "$ref": "#/components/schemas/Renew"
               }
             },
             "text/json": {
               "schema": {
-                "type": "string"
+                "$ref": "#/components/schemas/Renew"
               }
             },
             "application/*+json": {
               "schema": {
-                "type": "string"
+                "$ref": "#/components/schemas/Renew"
               }
             }
           }
@@ -314,92 +314,20 @@
         }
       }
     },
-    "/api/ApiKey/Renew": {
+    "/api/ApiKey/revoke": {
       "post": {
         "tags": [
           "ApiKey"
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "string"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "type": "string"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "type": "string"
-              }
+        "parameters": [
+          {
+            "name": "key",
+            "in": "query",
+            "schema": {
+              "type": "string"
             }
           }
-        },
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/ApiKey/Revoke": {
-      "post": {
-        "tags": [
-          "ApiKey"
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "string"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "type": "string"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "type": "string"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/ApiKey/TrackUsage": {
-      "post": {
-        "tags": [
-          "ApiKey"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "string"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "type": "string"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "type": "string"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "Success"
@@ -681,10 +609,6 @@
       "ApiKeyDto": {
         "type": "object",
         "properties": {
-          "userId": {
-            "type": "string",
-            "nullable": true
-          },
           "org_Name": {
             "type": "string",
             "nullable": true
@@ -751,6 +675,16 @@
             "$ref": "#/components/schemas/Address"
           },
           "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Renew": {
+        "type": "object",
+        "properties": {
+          "plan": {
             "type": "string",
             "nullable": true
           }

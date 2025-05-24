@@ -1,5 +1,8 @@
 ﻿using ActivityTracker.Application.Interfaces;
 using ActivityTracker.Models;
+using ActivityTracker.Models.Entities;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.DataProtection.KeyManagement;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -22,7 +25,7 @@ namespace ActivityTracker.API.Controllers
 
 
         // GET: api/ApiKey
-        [HttpGet]
+        [HttpGet("GetApiKey")]
         public async Task<IActionResult> GetApiKey()
         {
             var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
@@ -47,28 +50,37 @@ namespace ActivityTracker.API.Controllers
 
         public class ApiKeyDto
         {
-            public string UserId { get; set; }
             public string Org_Name { get; set; }
             public string Domain { get; set; }
             public string Plan { get; set; }
         }
 
         // POST: api/ApiKey/Create
-        [HttpPost("Create")]
+        [HttpPost("create")]
         public async Task<IActionResult> CreateApiKey([FromBody] ApiKeyDto apiKeyDto)
         {
             var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            var userName = User.Identity?.Name;
-
-            if (string.IsNullOrEmpty(userId) || string.IsNullOrEmpty(userName))
+            if (string.IsNullOrEmpty(userId))
                 return Unauthorized(new { Message = "User not authenticated." });
 
             var existingKey = await _apiKeyRepository.GetApiByUserIdAsync(userId);
             if (existingKey != null)
                 return BadRequest(new { Message = "An API key already exists for your account." });
 
-            var apiKey = await _apiKeyRepository.CreateApiKeyAsync(apiKeyDto);
+            var key = new Tenants
+            {
+                UserId = userId,
+                ApiSecret = Guid.NewGuid().ToString("N"),
+                Org_Name = apiKeyDto.Org_Name,
+                Domain = apiKeyDto.Domain,
+                Plan = apiKeyDto.Plan,
+                Created_At = DateTime.UtcNow,
+                ExpirationDate = DateTime.UtcNow.AddDays(30),
+                RequestLimit = 1000,
+                IsRevoked = false
+            };
 
+            var apiKey = await _apiKeyRepository.CreateApiKeyAsync(key);
             return Ok(new
             {
                 Message = "API key created successfully.",
@@ -85,49 +97,50 @@ namespace ActivityTracker.API.Controllers
             });
         }
 
-
-        // POST: api/ApiKey/Validate
-        [HttpPost("Validate")]
-        public async Task<IActionResult> ValidateApiKey([FromBody] string key)
+        public class Renew()
         {
-            var apiKey = await _apiKeyRepository.ValidateApiKeyAsync(key);
-            if (apiKey == null)
-                return BadRequest("Invalid or expired API key.");
-
-            return Ok(new { Message = "API key is valid.", ApiKey = apiKey });
+            public string Plan { get; set; }
         }
-
         // POST: api/ApiKey/Renew
-        [HttpPost("Renew")]
-        public async Task<IActionResult> RenewApiKey([FromBody] string key)
+        [HttpPost("renew")]
+        public async Task<IActionResult> RenewApiKey([FromBody] Renew renew)
         {
-            var success = await _apiKeyRepository.RenewApiKeyAsync(key);
-            if (!success)
-                return NotFound("API key not found or already revoked.");
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (string.IsNullOrEmpty(userId))
+                return Unauthorized(new { Message = "User not authenticated." });
 
-            return Ok("API key renewed successfully.");
+            var key = await _apiKeyRepository.GetApiByUserIdAsync(userId);
+            if(key == null)
+                return NotFound(new { Message = "API key not found." });
+
+            var update = new Tenants
+            {
+                Plan = renew.Plan,
+
+            };
+
+
+            // business logic add hare
+
+            var success = await _apiKeyRepository.RenewApiKeyAsync(key.ApiSecret);
+            if (!success)
+                return NotFound(new { Message = "API key not found or already revoked." });
+
+            return Ok(new { Message = "API key renewed successfully." });
         }
 
+        [Authorize(Roles = "Admin")]
         // POST: api/ApiKey/Revoke
-        [HttpPost("Revoke")]
-        public async Task<IActionResult> RevokeApiKey([FromBody] string key)
+        [HttpPost("revoke")]
+        public async Task<IActionResult> RevokeApiKey([FromQuery] string key)
         {
             var success = await _apiKeyRepository.RevokeApiKeyAsync(key);
             if (!success)
-                return NotFound("API key not found.");
+                return NotFound(new { Message = "API key not found." });
 
-            return Ok("API key revoked successfully.");
+            return Ok(new { Message = "API key revoked successfully." });
         }
 
-        // POST: api/ApiKey/TrackUsage
-        [HttpPost("TrackUsage")]
-        public async Task<IActionResult> TrackUsage([FromBody] string key)
-        {
-            var success = await _apiKeyRepository.TrackUsageAsync(key);
-            if (!success)
-                return BadRequest("Invalid API key or request limit exceeded.");
 
-            return Ok("API key usage tracked successfully.");
-        }
     }
 }
