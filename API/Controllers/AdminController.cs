@@ -38,7 +38,6 @@ namespace ActivityTracker.API.Controllers
             return Ok(users);
         }
 
-
         // GET: api/admin/user/{id}
         [HttpGet("user/{id}")]
         public async Task<IActionResult> GetUserById(string id)
@@ -84,7 +83,6 @@ namespace ActivityTracker.API.Controllers
             return Ok(new { Message = "Role created successfully" });
         }
 
-
         // POST: api/admin/assign-role
         [HttpPost("assign-role")]
         public async Task<IActionResult> AssignRoleToUser([FromQuery] string userId, [FromQuery] string roleName)
@@ -120,7 +118,6 @@ namespace ActivityTracker.API.Controllers
 
             return Ok(new { Message = "Role removed from user." });
         }
-
 
 
         // POST: api/admin/disable-login

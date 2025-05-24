@@ -23,7 +23,6 @@ namespace ActivityTracker.API.Controllers
             _userManager = userManager;
         }
 
-
         // GET: api/ApiKey
         [HttpGet("GetApiKey")]
         public async Task<IActionResult> GetApiKey()

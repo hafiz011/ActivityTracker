@@ -19,8 +19,6 @@ namespace ActivityTracker.API.Controllers
         private readonly EmailService _emailService;
         private readonly ILogger<AuthController> _logger;
 
-
-
         public AuthController(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
@@ -47,7 +45,6 @@ namespace ActivityTracker.API.Controllers
             {
                 if (!ModelState.IsValid)
                     return BadRequest(ModelState);
-
 
                 var user = await _userManager.FindByEmailAsync(model.Email);
                 if (user == null)
@@ -95,8 +92,6 @@ namespace ActivityTracker.API.Controllers
             await _signInManager.SignOutAsync();
             return Ok(new { Message = "Logged out successfully." });
         }
-
-
 
         // POST: api/auth/register
         [HttpPost("register")]
